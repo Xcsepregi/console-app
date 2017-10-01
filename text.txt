@@ -1,0 +1,6 @@
+The principles of integration were formulated independently by Isaac Newton and Gottfried Leibniz in the late 17th century, who thought of the integral
+as an infinite sum of rectangles of infinitesimal width. A rigorous mathematical definition of the integral was given by Bernhard Riemann. It is based on
+a limiting procedure that approximates the area of a curvilinear region by breaking the region into thin vertical slabs. Beginning in the nineteenth century,
+more sophisticated notions of integrals began to appear, where the type of the function as well as the domain over which the integration is performed has been
+generalised. A line integral is defined for functions of two or three variables, and the interval of integration [a, b] is replaced by a certain curve connecting 
+two points on the plane or in the space. In a surface integral, the curve is replaced by a piece of a surface in the three-dimensional space.
