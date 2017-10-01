@@ -5,6 +5,7 @@ using namespace std;
 #include <sstream>
 #include <iterator>
 
+//Pri volani tejto funkcie hlasi kompilator chyby, pokial by bola moznost rad by som ich prekonzultoval na cviceni
 template<typename T>
 size_t pocitadlo(stringstream s)
 {
