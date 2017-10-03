@@ -5,12 +5,20 @@ using namespace std;
 #include <sstream>
 #include <iterator>
 
-//Pri volani tejto funkcie hlasi kompilator chyby, pokial by bola moznost rad by som ich prekonzultoval na cviceni
 template<typename T>
-size_t pocitadlo(stringstream s)
+size_t pocitadlo(istream &s)
 {
 	return distance(istream_iterator<T>(s), istream_iterator<T>());
 }
+
+
+struct Line :public string{};
+	istream & operator >> (istream &stream, Line &line)
+	{
+		getline(stream, line);
+		return stream;
+	}
+
 
 int main(int argc, char * argv[])
 {
@@ -46,8 +54,6 @@ int main(int argc, char * argv[])
 		}
 
 		pVstup = &fs;
-
-		while (*pVstup >> text.rdbuf());
 	}
 
 	else
@@ -60,20 +66,24 @@ int main(int argc, char * argv[])
 
 		if (argv[1] == string("-c"))
 		{
-			pocet = distance(istream_iterator<char>(text), istream_iterator<char>());
+			pocet = pocitadlo<char>(*pVstup);
 			cout << "Pocet znakov v texte :" << pocet << endl;
 		}
 		else if (argv[1] == string("-w"))
 		{
-			pocet = distance(istream_iterator<string>(text), istream_iterator<string>());
+			pocet = pocitadlo<string>(*pVstup);
 			cout << "Pocet slov v texte :" << pocet << endl;
 		}
 		else if (argv[1] == string("-l"))
 		{
-			aux = text.str();
-			if (!aux.empty())pocet++;
-			pocet = pocet + count(aux.begin(), aux.end(), '\n');
+			pocet = pocitadlo<Line>(*pVstup);
 			cout << "Pocet riadkov v texte :" << pocet << endl;
+		}
+
+		else
+		{
+			cout << "Zly prepinac!" << endl;
+			return -1;
 		}
 
 	system("PAUSE");
