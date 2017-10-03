@@ -61,6 +61,8 @@ int main(int argc, char * argv[])
 		pVstup = &cin;
 		cout << "Zadajte text:" << endl;
 		
+		//EOF na vstupe je rieseny pomocou CTRL+Z na klavesnici
+		//Ak je za poslednym riadkom textu newline, EOF staci zadat raz, inac je to potrebne dvakrat
 		while (*pVstup >> text.rdbuf());
 	}
 
