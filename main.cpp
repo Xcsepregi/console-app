@@ -52,7 +52,6 @@ int main(int argc, char * argv[])
 			system("pause");
 			return -1;
 		}
-
 		pVstup = &fs;
 	}
 
@@ -61,27 +60,24 @@ int main(int argc, char * argv[])
 		pVstup = &cin;
 		cout << "Zadajte text:" << endl;
 		
-		//EOF na vstupe je rieseny pomocou CTRL+Z na klavesnici
-		//Ak je za poslednym riadkom textu newline, EOF staci zadat raz, inac je to potrebne dvakrat
 		while (*pVstup >> text.rdbuf());
 	}
 
 		if (argv[1] == string("-c"))
 		{
-			pocet = pocitadlo<char>(*pVstup);
+			pocet = pocitadlo<char>(text);
 			cout << "Pocet znakov v texte :" << pocet << endl;
 		}
 		else if (argv[1] == string("-w"))
 		{
-			pocet = pocitadlo<string>(*pVstup);
+			pocet = pocitadlo<string>(text);
 			cout << "Pocet slov v texte :" << pocet << endl;
 		}
 		else if (argv[1] == string("-l"))
 		{
-			pocet = pocitadlo<Line>(*pVstup);
+			pocet = pocitadlo<Line>(text);
 			cout << "Pocet riadkov v texte :" << pocet << endl;
 		}
-
 		else
 		{
 			cout << "Zly prepinac!" << endl;
