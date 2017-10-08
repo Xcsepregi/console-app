@@ -150,6 +150,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Counter.h" />
     <ClInclude Include="include\catch.hpp" />
     <ClInclude Include="include\catch_session.hpp" />
     <ClInclude Include="include\catch_with_main.hpp" />
